@@ -13,6 +13,10 @@ module.exports = {
       fontFamily: {
         jetbrainsmono: ["Jetbrains Mono", "monospace"],
       },
+      gridTemplateRows: {
+        7: "repeat(7, minmax(0, 1fr))",
+        7: "repeat(8, minmax(0, 1fr))",
+      },
     },
   },
   plugins: [],
