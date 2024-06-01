@@ -1,6 +1,6 @@
 import React from 'react';
 import {mockSearchResults} from "../constants/mock";
-import {XIcon, MagnifyingGlassIcon, SearchIcon} from "@heroicons/react/solid"
+import {XIcon, SearchIcon} from "@heroicons/react/solid"
 import SearchResults from "./SearchResults";
 function Search(props) {
     const [input, setInput] = React.useState('');
@@ -23,7 +23,7 @@ function Search(props) {
                     className="w-full px-4 py-2 focus:outline-none rounded-md bg-emerald-900 text-white placeholder-emerald-400"
                     placeholder="Search stock"
                     onChange={(event) => setInput(event.target.value)}
-                    onKeyPress={(event) => {
+                    onKeyDown={(event) => {
                         if (event.key === "Enter") {
                             updateBestMatches();
                         }

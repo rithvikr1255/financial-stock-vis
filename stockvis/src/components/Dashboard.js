@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 import Header from "./Header";
 import {mockCompanyProfile} from "../constants/mock";
+import Details from "./Details";
 function Dashboard(props) {
     return (
         <div
@@ -20,9 +21,7 @@ function Dashboard(props) {
                 </Card>
             </div>
             <div className="row-span-2 xl:row-span-3">
-                <Card>
-                    <h1 className={"text-emerald-400"}>Details</h1>
-                </Card>
+                <Details details={mockCompanyProfile}></Details>
             </div>
 
         </div>
