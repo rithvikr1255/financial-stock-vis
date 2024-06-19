@@ -1,0 +1,30 @@
+/* src/styles/Overview.css */
+.ai-icon {
+    width: 24px;
+    height: 24px;
+    margin-left: 8px;
+    display: inline-block;
+    -webkit-mask: url('ai-icon.svg') no-repeat center;
+    mask: url('ai-icon.svg') no-repeat center;
+    background: linear-gradient(270deg, #ff6ec4, #7873f5);
+    animation: gradient-animation 3s ease infinite;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+@keyframes gradient-animation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.prediction-text {
+    background: linear-gradient(270deg, #ff6ec4, #7873f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 3s ease infinite;
+    background-size: 200% 200%;
+}

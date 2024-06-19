@@ -2,17 +2,27 @@ import React from 'react';
 import {mockSearchResults} from "../constants/mock";
 import {XIcon, SearchIcon} from "@heroicons/react/solid"
 import SearchResults from "./SearchResults";
+import { searchSymbol } from "../api/StockAPI";
 function Search(props) {
     const [input, setInput] = React.useState('');
-    const [bestMatches, setBestMatches] = React.useState(mockSearchResults.result);
+    const [bestMatches, setBestMatches] = React.useState([]);
 
     function clear() {
         setInput("");
         setBestMatches([]);
     }
 
-    function updateBestMatches() {
-        setBestMatches(mockSearchResults.result);
+    async function updateBestMatches() {
+        try {
+            if (input) {
+                const searchResults = await searchSymbol(input);
+                const result = searchResults.result;
+                setBestMatches(result);
+            }
+        } catch(error) {
+            setBestMatches([]);
+            console.log(error)
+        }
     }
     return (
         <div className={"relative z-50"}>
